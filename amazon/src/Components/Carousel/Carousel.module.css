@@ -2,7 +2,7 @@ img{
     /* margin-left: 50px; */
 }
 
-div::before{
+.hero_img::before{
     content: "";
     position: absolute;
     bottom: 0;
