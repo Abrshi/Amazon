@@ -13,12 +13,12 @@ function Header() {
       {/* first div */}
       <div  className={styles.header_first}>
         {/* amazon logo */}
-        <a href='#'>
+        <a href="#" className={styles.a}>
         <div className={styles.header_first_first}>
          <img  className={styles.amazon_logo} src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" atr="amazon logo" />
         </div>
         </a>
-        <a href='#'>    
+        <a href="#" className={styles.a}>    
         <div  className={styles.header_first_second}>
           <span className={styles.location_conen}><IoLocationOutline /></span>
           <div>
@@ -51,7 +51,7 @@ function Header() {
 
       {/* third div */}
       <div className={styles.header_thered}>
-      <a href='#'>
+      <a href="#" className={styles.a}>
         <div  className={styles.header_thered_first }>
         
         <span><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/120px-Flag_of_the_United_States.svg.png?20151118161041" atr="flag"/></span>
@@ -59,7 +59,7 @@ function Header() {
         
         </div>
         </a>
-        <a href='#'>
+        <a href="#" className={styles.a}>
         <div className={styles.header_thered_second}>   
           
           <span className={styles.header_small_font}>Hello, sign in</span><br/>
@@ -68,7 +68,7 @@ function Header() {
         </div>
         </a>
 
-        <a href='#'>
+        <a href="#" className={styles.a}>
         <div  className={styles.header_thered_thered}>
           
           
@@ -78,7 +78,7 @@ function Header() {
         </div>
         </a>
         <div  className={styles.header_thered_forth}>
-         <a href='#'>
+         <a href="#" className={styles.a}>
          <div><span className={styles.header_thered_forth_cartno}>0</span><br/>
         <span className={styles.header_header_thered_cartlogo}> <BiCart size={45}/ ></span>
          </div>

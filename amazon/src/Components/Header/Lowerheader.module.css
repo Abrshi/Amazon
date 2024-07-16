@@ -18,24 +18,27 @@ li{
     height: 90%;
     width: auto;
 }
-li a {
+.a {
     display: flex;
     align-items: center;
     height: 100%;
     width: auto;
     border-radius: 2px;
     border: 1px solid  rgb(35,47,62) ;
+    text-decoration: none;
+    margin-left: 15px;
+    color: white;
   }
-  li a:hover{
+.a:hover{
     border:  1px solid white;
   }
   
-  li a span {
+ .a span {
     display: flex;
     align-items: center;
   }
   
-  li a span + span {
+.a span + span {
     margin-left: 8px; /* Adjust this value as needed */
   }
   
