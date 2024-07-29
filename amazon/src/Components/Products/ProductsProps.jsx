@@ -2,7 +2,7 @@ import React from 'react';
 import Rating from '@mui/material/Rating';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import productscss from './Products.module.css';
-
+import { Link } from 'react-router-dom';
 // Define a custom theme with overrides for Rating component
 const theme = createTheme({
   components: {
@@ -22,7 +22,9 @@ const theme = createTheme({
 function ProductsProps({ data }) {
   return (
     <ThemeProvider theme={theme}>
+    
       <div className={productscss.outer}>
+      <Link to={`/productDetail/${data.id}`}>
         <div className={productscss.img}>
           <img src={data.image} alt="product" />
         </div>
@@ -37,8 +39,10 @@ function ProductsProps({ data }) {
         <div className={productscss.price}>
           {data.price}
         </div>
+        </Link>
         <button className={productscss.button}>add to cart</button>
       </div>
+     
     </ThemeProvider>
   );
 }
