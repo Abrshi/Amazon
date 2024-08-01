@@ -1,12 +1,18 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductDetailcss from './ProductDetail.module.css';
 import Rating from '@mui/material/Rating';
 import { baseUrl } from '../../Api/endPoint';
 import Spinners from '../../Components/Spinners/Spinners';
+import { DataContext } from '../../Components/DataProvider/DataProvider';
+import { Type } from '../../utility/action.type';
 
 function ProductDetail() {
+
+
+
+
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
 
@@ -19,6 +25,24 @@ function ProductDetail() {
         console.log(err);
       });
   }, [productId]);
+
+
+
+
+
+  const { image, title, id, rating, price, description } = {product};
+  const [state, dispatch] = useContext(DataContext);
+
+  const addToCart = () => {
+    dispatch({
+      type: Type.ADD_TO_BASKET, // Corrected action type
+      item: { image, title, id, rating, price, description }
+    });
+  };
+
+
+
+
 
   return (
     <div>
@@ -48,7 +72,7 @@ function ProductDetail() {
             <div className={ProductDetailcss.price}>
               ${product.price}
             </div>
-            <button className={ProductDetailcss.button}>Add to cart</button>
+            <button className={ProductDetailcss.button} onClick={addToCart}>Add to cart</button>
             
             </div>
             </div>

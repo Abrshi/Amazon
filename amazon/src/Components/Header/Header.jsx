@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import Lowerheader from './Lowerheader'
 import { IoLocationOutline } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
 import { BiCart } from "react-icons/bi";
+import { DataContext } from '../DataProvider/DataProvider';
 
 function Header() {
+  const [{basket}]=useContext(DataContext)
+ 
   return (
     <div className={styles.first}>
     
@@ -16,7 +19,7 @@ function Header() {
         {/* amazon logo */}
         <Link to="/" className={styles.a}>
         <div className={styles.header_first_first}>
-         <img  className={styles.amazon_logo} src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" atr="amazon logo" />
+         <img  className={styles.amazon_logo} src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon logo" />
         </div>
         </Link>
         <Link to="#" className={styles.a}>    
@@ -55,7 +58,7 @@ function Header() {
       <Link to="#" className={styles.a}>
         <div  className={styles.header_thered_first }>
         
-        <span><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/120px-Flag_of_the_United_States.svg.png?20151118161041" atr="flag"/></span>
+        <span><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/120px-Flag_of_the_United_States.svg.png?20151118161041" alt="flag"/></span>
         <span>EN</span>
         
         </div>
@@ -80,7 +83,7 @@ function Header() {
        </Link>
         <div  className={styles.header_thered_forth}>
          <Link to="/cart" className={styles.a}>
-         <div><span className={styles.header_thered_forth_cartno}>0</span><br/>
+         <div><span className={styles.header_thered_forth_cartno}>{basket.length}</span><br/>
         <span className={styles.header_header_thered_cartlogo}> <BiCart size={45}/ ></span>
          </div>
          <span>cart</span>
