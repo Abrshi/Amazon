@@ -41,7 +41,10 @@ function Results() {
   <div  className={Resultcss.flex}>
             {
                 results.map((info) => (
-                  <ProductsProps data={info} />
+                  <ProductsProps 
+                  data={info} 
+                  addToCart="add"
+                  />
                 ))
               }
             </div>

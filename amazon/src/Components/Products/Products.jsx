@@ -14,7 +14,10 @@ function Products() {
             <div  className={productscss.flex}>
             {
                 products.map((info) => (
-                  <ProductsProps data={info} />
+                  <ProductsProps 
+                  data={info} 
+                  addToCart="add"
+                  />
                 ))
               }
             </div>
