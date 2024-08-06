@@ -67,3 +67,8 @@
     .btn:hover{
         background-color: orange;
     }
+    @media (max-width: 480px) {
+        .flex{
+            display:block;
+        }
+    }

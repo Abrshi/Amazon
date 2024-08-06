@@ -14,6 +14,7 @@
     border-bottom: 1px solid;
     border-color: black;
     width: 100% !important;
+    height: fit-content;
 }
 
     .flex{
@@ -76,8 +77,13 @@
     }
     .title :first-child{
         max-width:400px;
-        text-decoration: none;
+      
     }
     .link{
         text-decoration: none !important;
+    }
+    @media (max-width: 480px) {
+        .ProductDetailcss{
+            display: inline-block;
+        }
     }

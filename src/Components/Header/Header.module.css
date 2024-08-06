@@ -28,7 +28,7 @@
 }
 .header{
     width: 98%;
-    height: 62px;
+    height: fit-content;
     display: flex;
     background-color:rgb(19,25,33);
     padding: 0 1% ;
@@ -138,7 +138,8 @@ padding-top:12px ;
 }
 .header_thered_forth>a{
     display: flex;
-    margin-top: -10px;
+    margin-top: -9px;
+    padding-bottom: 20px;
 }
 .header_thered_forth>a>span{
    padding-top: 20px;
@@ -158,6 +159,8 @@ padding-top:12px ;
 }
 .header_header_thered_cartlogo {
     position: relative;
+    height: fit-content;
+    padding-bottom: 20px;
 }
 @media screen and (max-width:576px) {
     .header {

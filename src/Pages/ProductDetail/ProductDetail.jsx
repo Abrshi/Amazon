@@ -29,6 +29,7 @@ function ProductDetail() {
         <ProductsProps
           data={product} 
           addToCart="add"
+          cart="cart"
         />
       ) : (
         <div>Loading...</div> // Or a spinner/loading indicator if you have one

@@ -1,7 +1,7 @@
 .cardes_div{
     width: auto;
     height: 350px;
-    background-color: #fff;
+    /* background-color: #fff; */
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     width: 85%;
     margin: 15px;
@@ -36,4 +36,10 @@
     display: grid;
     grid-template-columns: repeat(4,1fr);
     place-items: center();
+}
+@media (max-width: 480px) {
+    .elements{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
 }
