@@ -42,4 +42,8 @@ li{
     margin-left: 8px; /* Adjust this value as needed */
   }
   
-  
+  @media screen and (max-width:576px){
+    .first{
+      display: none;
+  }
+  }

@@ -146,7 +146,7 @@ padding-top:12px ;
 }
 .header_thered_first>span>img{
     width: 17px;
-    height: 13px;
+    height: 10px;
     margin-right: 10px;
 }
 .header_thered_forth_cartno{
@@ -191,5 +191,8 @@ padding-top:12px ;
     }
     .header_thered_forth{
         height: 57px;
+    }
+    .header_thered_forth>a{
+        padding-bottom: 0px;
     }
 }
