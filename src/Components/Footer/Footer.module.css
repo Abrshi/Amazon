@@ -1,0 +1,52 @@
+.footer {
+    background-color: #232f3e;
+    color: white;
+    padding: 2rem 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .section {
+    flex: 1;
+    min-width: 200px;
+    margin: 0 1rem;
+  }
+  
+  .section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #ffffff;
+  }
+  
+  .section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .section ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .bottom {
+    text-align: center;
+    padding: 1rem;
+    background-color: #131921;
+  }
+  

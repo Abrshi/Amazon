@@ -8,7 +8,8 @@ import ProductDetail from './Pages/ProductDetail/ProductDetail';
 import Results from './Pages/Results/Results';
 import Cart from './Pages/Cart/Cart';
 import Header from './Components/Header/Header';
-//import Stat from './Components/State/Stat';
+import Footer from './Components/Footer/Footer';
+import FourO4 from './Components/FourO4/FourO4';
 
 function Routing() {
   return (
@@ -23,7 +24,9 @@ function Routing() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/productDetail/:productId" element={<ProductDetail />} />
         <Route path="/category/:categoryName" element={<Results />} />
+        <Route path="*" element={<FourO4 />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
