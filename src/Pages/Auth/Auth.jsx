@@ -73,7 +73,7 @@ function Auth() {
     }finally {
       setLoadingsignup(false);
       console.log("Login finished, loading:", loadingsignup); 
-      // handleClick()
+      handleClick()
     }
   };
 
