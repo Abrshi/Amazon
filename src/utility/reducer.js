@@ -1,7 +1,8 @@
 import { Type } from "./action.type";
 
 export const initialState = {
-    basket: []
+    basket: [],
+    user: null 
 };
 
 // Renamed from `reduser` to `reducer`
@@ -9,7 +10,7 @@ export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case Type.ADD_TO_BASKET:
             const existingItem = state.basket.find(item => item.id === action.item.id);
-            
+
             if (!existingItem) {
                 return {
                     ...state,
@@ -46,6 +47,12 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 basket: newBasket
+            };
+
+        case Type.SET_USER:
+            return {
+                ...state,
+                user: action.user 
             };
 
         default:
