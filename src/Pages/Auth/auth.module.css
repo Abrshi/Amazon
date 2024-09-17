@@ -87,6 +87,16 @@
     height: fit-content;
     padding: 10px 0;
 }
+.success{
+    background-color:rgba(0, 128, 0, 0.678);
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    padding: 10px 0;
+}
 .Spinners{
     display: flex;
     align-items: center;

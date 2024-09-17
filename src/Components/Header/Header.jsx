@@ -6,10 +6,10 @@ import { IoLocationOutline } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
 import { BiCart } from "react-icons/bi";
 import { DataContext } from '../DataProvider/DataProvider';
-
+import { auth } from './../../utility/firebase';
 function Header() {
   const [{basket}]=useContext(DataContext)
- 
+  const [{ user }, dispatch] = useContext(DataContext);
   return (
     <div className={styles.first}>
     
@@ -63,11 +63,29 @@ function Header() {
         
         </div>
        </Link>
-        <Link to="/auth" className={styles.a}>
+        <Link to={!user && "/auth"} className={styles.a}>
         <div className={styles.header_thered_second}>   
           
-          <span className={styles.header_small_font}>Hello, sign in</span><br/>
-          <span>Account & List</span>
+        <div>
+
+{user ? (
+<>
+<span className={styles.header_small_font}>Heloo { user?.email?.split("@")[0]}</span>
+<br />
+<span onClick={() => auth.signOut()}>SignOut</span>
+
+</>
+) : (
+<>
+<span className={styles.header_small_font}>Hello, sign in</span>
+<br /><span>Account & List</span>
+<br />
+</>
+)}
+
+
+</div>
+          
          
         </div>
        </Link>

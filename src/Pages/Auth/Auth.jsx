@@ -5,6 +5,7 @@ import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'fire
 import { auth } from './../../utility/firebase';
 import { DataContext } from '../../Components/DataProvider/DataProvider'; // Corrected import
 import { Type } from './../../utility/action.type'; // Importing Type
+import { useNavigate } from 'react-router-dom';
 
 function Auth() {
   const [chake, setChake] = useState(true);
@@ -18,6 +19,7 @@ function Auth() {
   const [loginpassword, setLoginpassword] = useState('');
   const [loginerr, setLoginerr] = useState('');
   const [loadinglogin, setLoadinglogin] =useState(false);
+  const navigate=useNavigate();
 
   // Correct useContext call
   const [{ user }, dispatch] = useContext(DataContext); // Corrected context
@@ -39,13 +41,16 @@ function Auth() {
       });
   
       console.log("Login successful");
+      navigate("/");
     } catch (err) {
       console.error("Login error:", err);
       setLoginerr(err.message);
     } finally {
       setLoadinglogin(false);
-      console.log("Login finished, loading:", loadinglogin);  
-    }
+      
+    
+         }
+         
   };
   
   
@@ -73,7 +78,7 @@ function Auth() {
     }finally {
       setLoadingsignup(false);
       console.log("Login finished, loading:", loadingsignup); 
-      handleClick()
+      !signuperr ? handleClick(): console.log("err");
     }
   };
 
