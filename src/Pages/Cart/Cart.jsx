@@ -5,6 +5,7 @@ import cartCss from './Cart.module.css';
 import { Type } from '../../utility/action.type'; // Adjust this import based on your actual file path
 import { SlArrowUp } from "react-icons/sl";
 import { SlArrowDown } from "react-icons/sl";
+import { Link } from 'react-router-dom';
 function Cart() {
   const [{ basket }, dispatch] = useContext(DataContext);
 
@@ -66,7 +67,7 @@ function Cart() {
                 This order contains a gift
                 <br/>
               </label>
-              <button type="submit" className={cartCss.button}>Continue to Checkout</button>
+              <button className={cartCss.button}><Link to="/payment">Continue to Checkout</Link></button>
             </form>
           </div>
         </div>
