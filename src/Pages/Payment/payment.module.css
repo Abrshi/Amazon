@@ -1,0 +1,55 @@
+.chakout{
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    background-color: #d1d1d1;
+}
+.address{
+    padding: 20px;
+    display: flex;
+}
+.address>div{
+   min-width: 200px;
+}
+.address>div>h3{
+    font-weight: 800;
+    text-decoration: underline;
+}
+.flex{
+    display: flex;
+    gap: 100px;
+}
+.productItem>div>a>div>div>img{
+    width: 90px !important;
+    height: auto;
+}
+.productItem>div{
+    width: 130px;
+    height: auto;
+}
+.mapmother{
+    display: flex!important;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+.CardContener{
+    max-width: 360px;
+    width: 100%;
+}
+.outer{
+    padding: 30px;
+}
+.carederr{
+    color: red;
+}
+.payNow{
+    width:auto;
+    height: auto;
+    padding: 5px 30px;
+    border-color: orange;
+    background-color: orange;
+    border-radius: 10px;
+}
+.payNow:hover{
+    background-color: rgb(255, 125, 0);
+}

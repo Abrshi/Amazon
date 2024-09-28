@@ -11,7 +11,7 @@ function Cart() {
 
   // Calculate total price
   const total = basket.reduce((accumulator, info) => accumulator + info.price * (info.amount || 1), 0);
-  console.log(total);
+  
 
   const increment = (item) => {
     dispatch({
