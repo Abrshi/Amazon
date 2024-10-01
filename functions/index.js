@@ -22,7 +22,7 @@ app.get("/", (req, res) => {  // Corrected the order of req and res
 });
 
 app.post("/payment/create", async (req, res) => {
-    const total = Number(req.query.total); // Ensure total is a number
+    const total = parseInt(Number(req.query.total)); // Ensure total is a number
 
     if (total > 0) {
         console.log("Payment received:", total);

@@ -4,3 +4,9 @@ body{
 Link{
     text-decoration: none;
 }
+.ElementsApp{
+    font-size: 30px;
+}
+.StripeElement {
+    height: 30px;
+}
