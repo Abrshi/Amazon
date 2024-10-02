@@ -70,9 +70,9 @@ function Payment() {
       } catch (err) {
         console.error("Error saving order to Firestore:", err);
       }
-      
+      setLoader(false);
 
-      navigate('/orders'); // Navigate to the orders page
+      //navigate('/orders'); // Navigate to the orders page
     } catch (error) {
       console.error('Payment error:', error);
       setCheckCard(error.message); // Display payment error
@@ -110,7 +110,7 @@ function Payment() {
         </div>
       </div>
       <hr />
-      <div className={`${payment.flex}`}>
+      <div className={`${payment.form}`}>
         <h3>Payment method</h3>
         <div className={payment.CardContainer}>
           <form onSubmit={handlePayment}>
