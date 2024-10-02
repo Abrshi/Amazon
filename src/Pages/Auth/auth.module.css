@@ -78,7 +78,7 @@
     display: block !important;
 }
 .error{
-    background-color: rgba(255, 0, 0, 0.356);
+    background-color: rgba(255, 0, 0, 0.280);
     border-radius: 10px;
     width: 100%;
     display: flex;

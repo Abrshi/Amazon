@@ -5,7 +5,8 @@ import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'fire
 import { auth } from './../../utility/firebase';
 import { DataContext } from '../../Components/DataProvider/DataProvider'; // Corrected import
 import { Type } from './../../utility/action.type'; // Importing Type
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 
 function Auth() {
   const [chake, setChake] = useState(true);
@@ -14,6 +15,10 @@ function Auth() {
     setChake(!chake);
   };
 
+
+// route protection for payment page
+  const navSetData=useLocation();
+  console.log(navSetData)
   // Login
   const [loginemail, setLoginemail] = useState('');
   const [loginpassword, setLoginpassword] = useState('');
@@ -41,7 +46,7 @@ function Auth() {
       });
   
       console.log("Login successful");
-      navigate("/");
+      navigate(navSetData?.state?.redirect || "/");
     } catch (err) {
       console.error("Login error:", err);
       setLoginerr(err.message);
@@ -82,11 +87,26 @@ function Auth() {
     }
   };
 
+
+ 
+
   return (
     <div className={authcss.div}>
       {/* Login Form */}
       <form action="" className={chake ? authcss.active : authcss.notActive}>
         <p className={authcss.signin}>Sign-in</p>
+        {navSetData?.state?.redirect &&(
+           <small style={{
+            padding:'7px',
+            color:'red',
+            textAlign:'center',
+            fontWeight:'boled',
+            backgroundColor:'rgba(255, 0, 0, 0.280)',
+            width:'400px',
+            borderRadius:'10px',
+            marginBottom:'5px'
+           }}>{navSetData?.state?.msg}</small>
+        )}
         <div className={authcss.inerdiv}>
           <label htmlFor="email">E-mail</label><br />
           <input value={loginemail} onChange={(e) => setLoginemail(e.target.value)} type="text" /><br />

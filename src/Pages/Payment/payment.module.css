@@ -43,21 +43,23 @@
     color: red;
 }
 .payNow{
-    width:auto;
+    width:200px;
     height: auto;
     padding: 5px 30px;
     border-color: orange;
     background-color: orange;
     border-radius: 10px;
+    display: flex !important;
+    justify-content: space-around;
+    font-size: 20px;
 }
 .payNow:hover{
     background-color: rgb(255, 125, 0);
 }
 .loader{
     display:flex;
-    background-color: lightblue;
-    gap: 30px;
-    width: 200px;
+    gap :10px;
+   
 }
 @media screen and (min-wdth :760px){
     .flex{

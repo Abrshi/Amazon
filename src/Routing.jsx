@@ -12,7 +12,7 @@ import Footer from './Components/Footer/Footer';
 import FourO4 from './Components/FourO4/FourO4';
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
-
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 const stripePromise = loadStripe('pk_test_51Q0MSj08t7x8qBrheMm8UYrZH2D0MrGaVM3kgXxbcp8BkJyuNFKwznvDaWlbXFMm2PD109avwm49LIE6pLQZxpLd00GTHt8C6Y');
 function Routing() {
   
@@ -25,12 +25,21 @@ function Routing() {
         <Route path="/" exact element={<Landing />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/auth" element={<Auth />} />
-        <Route path="/orders" element={<Orders />} />
+        <Route path="/orders" element={
+           <ProtectedRoute msg={"you must login to see your orders"} redirect={"/orders"}>
+           <Elements stripe={stripePromise}>
+           <Orders />
+           </Elements>
+           </ProtectedRoute>
+         } />
 
-        <Route path="/payment" element={
+        <Route path="/payment" 
+        element={
+          <ProtectedRoute msg={"you must login to pay"} redirect={"/payment"}>
           <Elements stripe={stripePromise}>
           <Payment />
           </Elements>
+          </ProtectedRoute>
           } />
 
         <Route path="/productDetail/:productId" element={<ProductDetail />} />
