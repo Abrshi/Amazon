@@ -72,7 +72,7 @@ function Payment() {
       }
       setLoader(false);
 
-      //navigate('/orders'); // Navigate to the orders page
+      navigate('/orders'); // Navigate to the orders page
     } catch (error) {
       console.error('Payment error:', error);
       setCheckCard(error.message); // Display payment error
